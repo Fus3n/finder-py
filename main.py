@@ -8,9 +8,11 @@ from PySide6.QtGui import (QAction, QFont, QFontDatabase, QIcon, QKeyEvent,
 from PySide6.QtWidgets import (QApplication, QFrame, QMainWindow, QMenu,
                                QSystemTrayIcon, QVBoxLayout)
 
-from AppListWidget import AppListWidget
-from ListItem import ListItem
-from SearchInput import SearcInput
+from widgets.AppListWidget import AppListWidget
+from widgets.ListItem import ListItem
+from widgets.SearchInput import SearchInput
+
+
 
 # CONSTANTS
 INPUT_BOX_STYLE = """
@@ -67,7 +69,7 @@ class MainWindow(QMainWindow):
         
 
         # Setup input
-        self.input_box = SearcInput(self.list_view, dobounce_delay=200) # delay in milliseconds
+        self.input_box = SearchInput(self.list_view, dobounce_delay=200) # delay in milliseconds
         self.input_box.debounce_timeout.connect(self.populate_list)
         self.input_box.setFocus()
 
@@ -105,7 +107,7 @@ class MainWindow(QMainWindow):
         self.list_view.clear()
         for idx, i in enumerate(res):
             is_file = os.path.isfile("./" + i)
-            list_item = ListItem(self.list_view, i, QPixmap("./file-icon.png" if is_file else "./folder-icon.png"), idx)
+            list_item = ListItem(self.list_view, i, QPixmap("./icons/file-icon.png" if is_file else "./icons/folder-icon.png"), idx)
             self.list_view.add_list_item(list_item, self.list_item_clicked)
             if idx == 0:
                 list_item.set_selected(True)
@@ -189,7 +191,7 @@ if __name__ == '__main__':
 
     # SYSTEM TRAY, you can show and quit window using system tray 
     tray_icon = QSystemTrayIcon()
-    tray_icon.setIcon(QIcon("./software.png")) # set an icon for the tray icon
+    tray_icon.setIcon(QIcon("./icons/software.png")) # set an icon for the tray icon
     tray_icon.setVisible(True)
 
     tray_menu = QMenu()

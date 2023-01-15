@@ -5,7 +5,7 @@ from typing import Callable, TYPE_CHECKING
 
 # to prevent circular imports
 if TYPE_CHECKING:
-    from ListItem import ListItem
+    from . import ListItem
 
 
 class AppListWidget(QListWidget):

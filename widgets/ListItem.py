@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QFrame, QLabel, QHBoxLayout
 from PySide6.QtGui import QMouseEvent, QKeyEvent, Qt, QPixmap
 from PySide6.QtCore import Signal
 
-from AppListWidget import AppListWidget
+from .AppListWidget import AppListWidget
 
 
 DEFAULT_STYLE_SHEET = """

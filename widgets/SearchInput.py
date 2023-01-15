@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import QTimer, Signal
 from PySide6.QtGui import Qt, QKeyEvent
-from AppListWidget import AppListWidget
+from . import AppListWidget
 
 INPUT_BOX_STYLE = """
 background: #282A3A; 
@@ -14,12 +14,12 @@ color: #D8D8D8;
 padding: 13px 13px;
 """
 
-class SearcInput(QLineEdit):
+class SearchInput(QLineEdit):
 
     debounce_timeout = Signal()
     
     def __init__(self, list_view: AppListWidget ,dobounce_delay: float = -1, parent=None):
-        super(SearcInput, self).__init__(parent)
+        super(SearchInput, self).__init__(parent)
         self.list_view = list_view
 
         # Setup stylesheet
