@@ -96,8 +96,7 @@ class MainWindow(QMainWindow):
 
     def populate_list(self):
         """demo / filling out list with all the files and folders from the computers Download Folder"""
-        download_folder = os.path.join(os.path.expanduser('~'), 'Downloads')
-        list_dir = os.listdir(download_folder)
+        list_dir = os.listdir("./")
         list_dir.sort()
         if self.input_box.text():
             res = [i for i in list_dir if self.input_box.text().lower() in i.lower()]
@@ -105,7 +104,7 @@ class MainWindow(QMainWindow):
             res = list_dir
         self.list_view.clear()
         for idx, i in enumerate(res):
-            is_file = os.path.isfile(download_folder + "/" + i)
+            is_file = os.path.isfile("./" + i)
             list_item = ListItem(self.list_view, i, QPixmap("./file-icon.png" if is_file else "./folder-icon.png"), idx)
             self.list_view.add_list_item(list_item, self.list_item_clicked)
             if idx == 0:

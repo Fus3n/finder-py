@@ -5,9 +5,9 @@ If you have seen macos `spotlight` or `microsoft powertools run` this is just a 
 
 The Frontend on PySide6 and has the necessary functionality implimented to complete app.
 
-It has a demo function `populate_list` that basically gathers all files and folders from Downloads folder and shows it
+It has a demo function `populate_list` that basically gathers all files and folders from current folder and shows it
 
-![alt text](images/ss-preview-file-finder.png)
+![ss preivew](/images/ss-preview-file-finder.png)
 
 ## Features
 - Widgets:
@@ -24,3 +24,4 @@ It has a demo function `populate_list` that basically gathers all files and fold
 
 
 #### This is basically a template to get you started on making finder applications or whatever you want to, i posted this because after making the UI i didn't knew what to make `(*>﹏<*)′
+
