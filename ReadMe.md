@@ -7,6 +7,8 @@ The Frontend on PySide6 and has the necessary functionality implimented to compl
 
 It has a demo function `populate_list` that basically gathers all files and folders from Downloads folder and shows it
 
+![alt text](images/ss-preview-file-finder.png)
+
 ## Features
 - Widgets:
     - 🪟 AppListWidget
