@@ -25,7 +25,6 @@ class SearcInput(QLineEdit):
         # Setup stylesheet
         self.setStyleSheet(INPUT_BOX_STYLE)
         self.setPlaceholderText("Start typing...")
-        self.setStyleSheet(INPUT_BOX_STYLE)
         self.setAlignment(Qt.AlignLeading)
 
         # Input debouncing
@@ -68,7 +67,7 @@ class SearcInput(QLineEdit):
         cut_action.setShortcut("Ctrl+X")
         select_all_action.setShortcut("Ctrl+A")
 
-        # CAN ADD MORE ACTIONS ...
+        # Add more actions
 
         
         action = menu.exec_(self.mapToGlobal(event.pos()))
